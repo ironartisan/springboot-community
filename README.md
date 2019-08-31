@@ -29,7 +29,6 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 
 
 #### 其他
-TODO
 mapper：
 service：
 
