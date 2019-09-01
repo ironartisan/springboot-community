@@ -26,7 +26,8 @@ function post() {
                     // 确认登陆
                     var is_accepted = confirm(response.message);
                     if (is_accepted) {
-                        window.open("https://github.com/login/oauth/authorize?client_id=f2cd43e0f2411e6b3ff8&redirect_uri=" + document.location.origin + "/callback&scope=user&state=1");                        window.localStorage.setItem("closable", "true");
+                        window.open("https://github.com/login/oauth/authorize?client_id=2b959ac8fd3f3f9affa0&redirect_uri=" + document.location.origin + "/callback&scope=user&state=1");
+                        window.localStorage.setItem("closable", "true");
                     } else {
                         alert(response.message);
                     }
@@ -62,7 +63,8 @@ function comment(e) {
                     // 确认登陆
                     var is_accepted = confirm(response.message);
                     if (is_accepted) {
-                        window.open("https://github.com/login/oauth/authorize?client_id=f2cd43e0f2411e6b3ff8&redirect_uri=http://117.50.19.236/callback&scope=user&state=1");
+                        window.open("https://github.com/login/oauth/authorize?client_id=2b959ac8fd3f3f9affa0&redirect_uri=" + document.location.origin + "/callback&scope=user&state=1");
+                        window.localStorage.setItem("closable", "true");
                         window.localStorage.setItem("closable", "true");
                     } else {
                         alert(response.message);
