@@ -1,4 +1,4 @@
-package com.halo.blog.controller;
+package com.halo.blog.dto;
 
 import com.halo.blog.model.User;
 import lombok.Data;

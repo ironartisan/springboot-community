@@ -82,7 +82,10 @@
                             <div th:text="${comment.content}"></div>
                         </div>
                         <div class="menu">
-                            <span class="glyphicon glyphicon-thumbs-up icon"></span>
+                            <span class="icon">
+                                <span class="glyphicon glyphicon-thumbs-up"></span>
+                                <span th:text="${comment.likeCount}"></span>
+                            </span>
                             <span th:data-id="${comment.id}" onclick="collapseContent(this)" class="comment-icon">
                                 <span class="glyphicon glyphicon-comment"></span>
                                 <span th:text="${comment.commentCount}"></span>
@@ -143,11 +146,6 @@
                         <h4 class="media-heading"><span th:text="${question.user.name}"></span></h4>
                     </div>
                 </div>
-                <hr>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4>关注微信公众号</h4>
-                <img class="img-thumbnail question-wechat" src="/images/wechat.png">
                 <hr>
             </div>
 

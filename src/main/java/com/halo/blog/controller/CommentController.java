@@ -5,7 +5,7 @@ import com.halo.blog.dto.CommentDTO;
 import com.halo.blog.dto.ResultDTO;
 import com.halo.blog.enums.CommentTypesEnum;
 import com.halo.blog.exception.CustomizeErrorCode;
-import com.halo.blog.mapper.CommentMapper;
+import com.halo.blog.mapper.CommentExMapper;
 import com.halo.blog.model.Comment;
 import com.halo.blog.model.User;
 import com.halo.blog.service.CommentService;
@@ -24,7 +24,7 @@ import java.util.List;
 @Controller
 public class CommentController {
     @Autowired
-    private CommentMapper commentMapper;
+    private CommentExMapper commentExMapper;
 
     @Autowired
     private CommentService commentService;
@@ -63,5 +63,6 @@ public class CommentController {
         List<CommentDTO> commentDTOS = commentService.listByTargetId(id, CommentTypesEnum.COMMENT);
         return ResultDTO.okOf(commentDTOS);
     }
+
 
 }

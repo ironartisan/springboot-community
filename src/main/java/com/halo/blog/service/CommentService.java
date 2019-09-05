@@ -9,6 +9,7 @@ import com.halo.blog.exception.CustomizeException;
 import com.halo.blog.mapper.*;
 import com.halo.blog.model.*;
 import com.halo.blog.util.MyUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -74,6 +75,9 @@ public class CommentService {
             parentComment.setId(comment.getParentId());
             parentComment.setCommentCount(1);
             commentExMapper.incComment(parentComment);
+            // 增加点赞数
+//            parentComment.setLikeCount(1L);
+//            commentExMapper.incLike(parentComment);
 
             // 增加通知
             createNotification(comment, dbComment.getCommentator(), commentator.getName(), question.getTitle(), NotificationTypesEnum.REPLY_COMMENT, question.getId());
@@ -155,4 +159,5 @@ public class CommentService {
 
         return commentDTOS;
     }
+
 }

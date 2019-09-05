@@ -18,6 +18,13 @@
         <result column="COMMENT_COUNT" jdbcType="INTEGER" property="commentCount"/>
     </resultMap>
     <update id="incComment" parameterType="com.halo.blog.model.Comment">
-    update COMMENT set COMMENT_COUNT = COMMENT_COUNT + #{commentCount,jdbcType=INTEGER} where id = #{id}
-  </update>
+        update COMMENT
+        set COMMENT_COUNT = COMMENT_COUNT + #{commentCount,jdbcType=INTEGER}
+        where id = #{id}
+    </update>
+    <update id="incLike" parameterType="com.halo.blog.model.Comment">
+        update COMMENT
+        set like_count = like_count + #{likeCount,jdbcType=BIGINT}
+        where id = #{id}
+    </update>
 </mapper>

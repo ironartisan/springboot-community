@@ -5,4 +5,6 @@ import com.halo.blog.model.Comment;
 public interface CommentExMapper {
     int incComment(Comment comment);
 
+    int incLike(Comment comment);
+
 }

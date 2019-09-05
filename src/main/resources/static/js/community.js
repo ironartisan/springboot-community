@@ -43,7 +43,6 @@ function comment(e) {
     var commentId = e.getAttribute("data-id");
     console.log(commentId);
     var realId = e.getAttribute("data-id");
-    var content = $("#input-" + commentId).val();
     $.ajax({
         type: "POST",
         url: "/comment",
@@ -76,7 +75,6 @@ function comment(e) {
         dataType: "json"
     });
 }
-
 
 /*
 展开二级评论
