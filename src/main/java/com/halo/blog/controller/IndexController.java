@@ -3,6 +3,7 @@ package com.halo.blog.controller;
 import com.halo.blog.dto.PaginationDTO;
 import com.halo.blog.dto.T;
 import com.halo.blog.mapper.UserMapper;
+import com.halo.blog.model.Question;
 import com.halo.blog.service.QuestionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,8 @@ public class IndexController {
 
 
         PaginationDTO pagination = questionService.list(search, page, size);
+        List<Question> hotQuestionList = questionService.selectHot();
+        model.addAttribute("hotQuestions", hotQuestionList);
 
 
         model.addAttribute("pagination", pagination);

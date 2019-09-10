@@ -66,16 +66,18 @@ public class CommentService {
             if (question == null) {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
-            // 增加评论数
+
             if (comment.getCommentCount() == null) {
                 comment.setCommentCount(0);
             }
             commentMapper.insert(comment);
+            // 新建对象赋予父评论的id
             Comment parentComment = new Comment();
             parentComment.setId(comment.getParentId());
+            // 增加评论数
             parentComment.setCommentCount(1);
             commentExMapper.incComment(parentComment);
-            // 增加点赞数
+            // 根据id增加点赞数
 //            parentComment.setLikeCount(1L);
 //            commentExMapper.incLike(parentComment);
 

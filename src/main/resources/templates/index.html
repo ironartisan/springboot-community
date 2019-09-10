@@ -87,6 +87,11 @@
                 <img class="img-thumbnail question-wechat" src="/images/wechat.png">
                 <hr>
                 <h3>热门话题</h3>
+                <ul class="question-hot">
+                    <li th:each="hotQuestion: ${hotQuestions}">
+                        <a th:href="@{'/question/'+ ${hotQuestion.id}}" th:text="${hotQuestion.title}"></a>
+
+                </ul>
                 <hr>
             </div>
         </div>

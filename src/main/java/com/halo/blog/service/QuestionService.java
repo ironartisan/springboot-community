@@ -196,4 +196,9 @@ public class QuestionService {
         }).collect(Collectors.toList());
         return questionDTOS;
     }
+
+    public List<Question> selectHot() {
+        List<Question> questions = questionExMapper.selectHot();
+        return questions;
+    }
 }

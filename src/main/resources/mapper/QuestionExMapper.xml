@@ -56,4 +56,11 @@
         order by gmt_create desc limit #{page},#{size}
     </select>
 
+    <select id="selectHot" parameterType="com.halo.blog.model.Question" resultMap="BaseResultMap">
+        select *
+        from QUESTION
+        order by comment_count desc
+        limit 10
+    </select>
+
 </mapper>

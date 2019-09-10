@@ -5,7 +5,6 @@ import com.halo.blog.dto.CommentDTO;
 import com.halo.blog.dto.ResultDTO;
 import com.halo.blog.enums.CommentTypesEnum;
 import com.halo.blog.exception.CustomizeErrorCode;
-import com.halo.blog.mapper.CommentExMapper;
 import com.halo.blog.model.Comment;
 import com.halo.blog.model.User;
 import com.halo.blog.service.CommentService;
@@ -23,8 +22,6 @@ import java.util.List;
 
 @Controller
 public class CommentController {
-    @Autowired
-    private CommentExMapper commentExMapper;
 
     @Autowired
     private CommentService commentService;
@@ -42,7 +39,7 @@ public class CommentController {
             return ResultDTO.errorOf(CustomizeErrorCode.CONTENT_IS_EMPTY);
 
         }
-
+        // 将前端内容commentCreateDTO传递给comment对象
         Comment comment = new Comment();
         comment.setParentId(commentCreateDTO.getId());
         comment.setContent(commentCreateDTO.getContent());
