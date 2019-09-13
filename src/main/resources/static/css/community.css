@@ -95,14 +95,14 @@ body {
 
 .question-related {
     line-height: 20px;
-    margin-left: 0;
+    margin-left: 25px;
     list-style: none;
     padding-left: 0;
 }
 
 .question-hot {
     line-height: 20px;
-    margin-left: 0;
+    margin-left: 25px;
     list-style: none;
     padding-left: 0;
 }
@@ -127,6 +127,15 @@ body {
     padding: 25px 25%;
     color: #666;
 }
+
+.side-list {
+    border: 1px solid #c0c4cc;
+    padding: 20px 0 0 0;
+    margin-top: 25px;
+    box-shadow: 2px 2px 8px #c7afc7;
+    border-radius: 3%;
+}
+
 
 /*蒲公英*/
 @media screen and (max-width: 600px) {

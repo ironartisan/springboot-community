@@ -23,7 +23,7 @@
 <!--嵌入导航栏-->
 <div th:insert="navigation :: nav"></div>
 <!--鼠标动态吸附-->
-<script src="/js/canvas-nest.js"></script>
+<!--<script src="/js/canvas-nest.js"></script>-->
 <div class="container-fluid main">
     <div class="row">
         <!--左边主要内容-->
@@ -139,23 +139,25 @@
 
         <!-- 右侧发起人-->
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4>发起人</h4>
-                <div class="media">
+            <div class="side-list">
+                <h4 class="add-margin">发起人</h4>
+                <hr>
+                <div class="media add-margin">
                     <div class="media-left">
-                        <a href="#"><img class="media-object img-rounded" th:src="${question.user.avatarUrl}"></a>
+                        <a href="#"><img class="media-object img-rounded " th:src="${question.user.avatarUrl}"></a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading"><span th:text="${question.user.name}"></span></h4>
                     </div>
                 </div>
-                <hr>
+
             </div>
 
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4>相关问题</h4>
-                <ul class="question-related">
+            <div class="side-list">
+                <h4 class="add-margin">相关问题</h4>
+                <hr>
+                <ul class="question-related ">
                     <li th:each="related : ${relatedQuestion}">
                         <a th:href="@{'/question/'+ ${related.id}}" th:text="${related.title}"></a>
                     </li>
