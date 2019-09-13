@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:text="${question.title}"></title>
+    <link href="/images/community.icon" rel="short icon"></link>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
@@ -15,12 +16,14 @@
     <script src="/js/editormd.min.js"></script>
     <script src="/js/lib/marked.min.js"></script>
     <script src="/js/lib/prettify.min.js"></script>
+    <script src="/js/love.js"></script>
 
 </head>
 <body>
 <!--嵌入导航栏-->
 <div th:insert="navigation :: nav"></div>
-
+<!--鼠标动态吸附-->
+<script src="/js/canvas-nest.js"></script>
 <div class="container-fluid main">
     <div class="row">
         <!--左边主要内容-->
